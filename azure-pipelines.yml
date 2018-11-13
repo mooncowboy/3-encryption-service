@@ -22,3 +22,8 @@ steps:
     command: test
     projects: '**/*Tests/*.csproj'
     arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
+
+pr:
+  branches:
+    include:
+    - master
