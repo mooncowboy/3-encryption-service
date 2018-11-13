@@ -12,16 +12,16 @@ namespace Encryption.API.Controllers
 	public class EncryptionController : ControllerBase
 	{
 		// POST api/encrypt
-		[HttpPost()]
-        [Route("Encrypt")]
+		[HttpPost("Encrypt/")]
+        //[Route("Encrypt")]
 		public ActionResult<string> Encrypt([FromBody] string value)
 		{
 			return Util.Encrypt(value);
 		}
 
         // POST api/decrypt
-		[HttpPost()]
-        [Route("Decrypt")]
+		[HttpPost("Decrypt/")]
+        //[Route("Decrypt")]
         public ActionResult<string> Decrypt([FromBody] string hash)
 		{
 			return Util.Decrypt(hash);
