@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Encryption.Utilities;
 
 namespace Encryption.API.Controllers
 {
@@ -14,14 +15,14 @@ namespace Encryption.API.Controllers
 		[HttpPost()]
 		public ActionResult<string> Encrypt([FromBody] string value)
 		{
-			return "encrypted...";
+			return Util.Encrypt(value);
 		}
 
         // POST api/decrypt
 		[HttpPost()]
-		public ActionResult<string> Encrypt([FromBody] string value)
+		public ActionResult<string> Decrypt([FromBody] string hash)
 		{
-			return "decrypted...";
+			return Util.Decrypt(hash);
 		}
 	}
 }
