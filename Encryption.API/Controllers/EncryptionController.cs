@@ -13,6 +13,7 @@ namespace Encryption.API.Controllers
 	{
 		// POST api/encrypt
 		[HttpPost()]
+        [Route("Encrypt")]
 		public ActionResult<string> Encrypt([FromBody] string value)
 		{
 			return Util.Encrypt(value);
@@ -20,7 +21,8 @@ namespace Encryption.API.Controllers
 
         // POST api/decrypt
 		[HttpPost()]
-		public ActionResult<string> Decrypt([FromBody] string hash)
+        [Route("Decrypt")]
+        public ActionResult<string> Decrypt([FromBody] string hash)
 		{
 			return Util.Decrypt(hash);
 		}
